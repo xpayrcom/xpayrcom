@@ -1,0 +1,14 @@
+{
+  "name": "xpayr-github-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "update-profile": "node scripts/update-profile.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

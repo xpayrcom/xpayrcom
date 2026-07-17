@@ -1,0 +1,14 @@
+name: Daily repository health
+
+on:
+  schedule:
+    - cron: '43 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    uses: ./.github/workflows/repository-health.yml
+

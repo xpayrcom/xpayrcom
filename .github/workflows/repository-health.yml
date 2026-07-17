@@ -1,0 +1,101 @@
+name: Reusable repository health
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 20
+
+      - name: Reject tracked secret files and merge markers
+        shell: bash
+        run: |
+          set -euo pipefail
+          tracked_secrets="$(git ls-files | grep -Ei '(^|/)(\.env($|\.)|id_rsa$|id_ed25519$|.*private_key.*|.*secret_key.*|.*seed_phrase.*)$' || true)"
+          if [ -n "$tracked_secrets" ]; then
+            printf 'Potential secret files are tracked:\n%s\n' "$tracked_secrets"
+            exit 1
+          fi
+          if git grep -nE '^(<<<<<<< |>>>>>>> )' -- .; then
+            echo 'Merge conflict markers found.'
+            exit 1
+          fi
+
+      - name: Validate tracked JSON and shell files
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            node -e 'JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8"))' "$file"
+          done < <(git ls-files -z '*.json')
+          while IFS= read -r -d '' file; do
+            bash -n "$file"
+          done < <(git ls-files -z '*.sh')
+
+      - uses: shivammathur/setup-php@bf6b4fbd49ca58e4608c9c89fba0b8d90bd2a39f # 2.35.5
+        if: ${{ hashFiles('**/*.php', 'composer.json') != '' }}
+        with:
+          php-version: '8.3'
+          extensions: curl, json, mbstring, pdo_sqlite, sqlite3
+          coverage: none
+
+      - name: Validate tracked PHP and XML files
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            php -l "$file"
+          done < <(git ls-files -z '*.php')
+          while IFS= read -r -d '' file; do
+            xmllint --noout "$file"
+          done < <(git ls-files -z '*.xml')
+
+      - name: Install and test Node.js project
+        if: ${{ hashFiles('package.json') != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f package-lock.json ]; then
+            npm ci
+            npm audit --omit=dev --audit-level=high
+          elif node -e 'const p=require("./package.json"); process.exit(Object.keys({...p.dependencies,...p.devDependencies,...p.optionalDependencies}).length ? 0 : 1)'; then
+            npm install --ignore-scripts --no-package-lock
+          fi
+          npm test --if-present
+
+      - name: Validate and test Composer project
+        if: ${{ hashFiles('composer.json') != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          composer validate --no-check-publish
+          if [ -f composer.lock ]; then
+            composer install --no-interaction --prefer-dist --no-progress
+            composer audit --locked
+            if php -r '$p=json_decode(file_get_contents("composer.json"), true); exit(isset($p["scripts"]["test"]) ? 0 : 1);'; then
+              composer test
+            fi
+          fi
+
+      - name: Write maintenance summary
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          {
+            echo '## Daily repository health'
+            echo
+            echo "- Repository: \`${GITHUB_REPOSITORY}\`"
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo '- Policy: no empty or timestamp-only commits'
+          } >> "$GITHUB_STEP_SUMMARY"
+
