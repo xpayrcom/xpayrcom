@@ -81,7 +81,9 @@ jobs:
           composer validate --no-check-publish
           if [ -f composer.lock ]; then
             composer install --no-interaction --prefer-dist --no-progress
-            composer audit --locked
+            if php -r '$p=json_decode(file_get_contents("composer.lock"), true); exit(count($p["packages"] ?? []) + count($p["packages-dev"] ?? []) > 0 ? 0 : 1);'; then
+              composer audit --locked
+            fi
             if php -r '$p=json_decode(file_get_contents("composer.json"), true); exit(isset($p["scripts"]["test"]) ? 0 : 1);'; then
               composer test
             fi
