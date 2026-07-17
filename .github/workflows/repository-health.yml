@@ -57,7 +57,7 @@ jobs:
             php -l "$file"
           done < <(git ls-files -z '*.php')
           while IFS= read -r -d '' file; do
-            xmllint --noout "$file"
+            python3 -c 'import sys; import xml.etree.ElementTree as ET; ET.parse(sys.argv[1])' "$file"
           done < <(git ls-files -z '*.xml')
 
       - name: Install and test Node.js project
@@ -98,4 +98,3 @@ jobs:
             echo "- Commit: \`${GITHUB_SHA}\`"
             echo '- Policy: no empty or timestamp-only commits'
           } >> "$GITHUB_STEP_SUMMARY"
-
