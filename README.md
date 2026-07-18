@@ -14,7 +14,7 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 - Reconcile payment intent, on-chain receipt, platform fee, and merchant settlement.
 - Use Arc Testnet references for agent-wallet payments, evidence anchoring, and reconciliation experiments.
 
-[Developer Hub](https://xpayr.com/developers) | [API Documentation](https://xpayr.com/doc-api) | [Testnet Registration](https://xpayr.com/merchant/register.php) | [Security](https://xpayr.com/security)
+[Developer Hub](https://xpayr.com/developers) | [API Documentation](https://xpayr.com/doc-api) | [Testnet Registration](https://xpayr.com/merchant/register.php) | [Security Contact](https://xpayr.com/contact)
 
 ## Official repositories
 
@@ -74,4 +74,3 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 ## Security
 
 Do not publish merchant secrets, webhook secrets, wallet private keys, seed phrases, or production credentials in issues or repositories. Use the `SECURITY.md` file in the affected repository for responsible disclosure instructions.
-
