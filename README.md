@@ -63,6 +63,12 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 | [xpayr-shopware6-gateway](https://github.com/xpayrcom/xpayr-shopware6-gateway) | XPayr crypto payment gateway integration for Shopware 6, with hosted checkout and order payment-state synchronization. |
 | [xpayr-opencart-gateway](https://github.com/xpayrcom/xpayr-opencart-gateway) | XPayr crypto payment gateway integration for OpenCart, connecting store orders to secure hosted checkout and payment updates. |
 | [xpayr-zencart-gateway](https://github.com/xpayrcom/xpayr-zencart-gateway) | XPayr crypto payment gateway integration for Zen Cart, with hosted checkout and merchant-side payment status handling. |
+
+### More XPayr projects
+
+| Repository | Purpose |
+| --- | --- |
+| [xpayr-verified-agentpay-giwa](https://github.com/xpayrcom/xpayr-verified-agentpay-giwa) | GIWA Sepolia testnet MVP for verified, policy-controlled AI agent escrow payments. |
 <!-- repository-catalog:end -->
 
 ## Release channels
