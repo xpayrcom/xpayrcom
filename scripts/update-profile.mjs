@@ -7,7 +7,12 @@ const END_MARKER = "<!-- repository-catalog:end -->";
 const GROUPS = [
   {
     title: "SDKs and packages",
-    repositories: ["xpayr-node-sdk", "xpayr-php-sdk", "xpayr-payment-evidence"],
+    repositories: [
+      "xpayr-node-sdk",
+      "xpayr-php-sdk",
+      "xpayr-payment-evidence",
+      "xpayr-extension-kit",
+    ],
   },
   {
     title: "API and developer resources",

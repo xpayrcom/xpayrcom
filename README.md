@@ -5,6 +5,7 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 [![Node SDK](https://img.shields.io/npm/v/%40xpayr%2Fnode-sdk?label=Node%20SDK)](https://www.npmjs.com/package/@xpayr/node-sdk)
 [![Payment Evidence](https://img.shields.io/npm/v/%40xpayr%2Fpayment-evidence?label=Payment%20Evidence)](https://www.npmjs.com/package/@xpayr/payment-evidence)
 [![PHP SDK](https://img.shields.io/packagist/v/xpayr/xpayr-php?label=PHP%20SDK)](https://packagist.org/packages/xpayr/xpayr-php)
+[![Extension Kit](https://img.shields.io/npm/v/%40xpayr%2Fextension-kit?label=Extension%20Kit)](https://www.npmjs.com/package/@xpayr/extension-kit)
 
 ## Build with XPayr
 
@@ -26,6 +27,7 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 | [xpayr-node-sdk](https://github.com/xpayrcom/xpayr-node-sdk) | Official Node.js SDK for creating XPayr payment sessions, verifying webhooks, and integrating direct-to-wallet crypto checkout. |
 | [xpayr-php-sdk](https://github.com/xpayrcom/xpayr-php-sdk) | Official PHP SDK for XPayr payment sessions, merchant operations, webhook verification, and server-side crypto checkout integrations. |
 | [xpayr-payment-evidence](https://github.com/xpayrcom/xpayr-payment-evidence) | Canonical payment-evidence envelopes, deterministic hashing, and Merkle inclusion proofs for independently verifiable XPayr receipts. |
+| [xpayr-extension-kit](https://github.com/xpayrcom/xpayr-extension-kit) | Crypto-native licensing for browser extensions. The licence is the paying wallet — no email, no licence keys, no chargebacks. Works offline, verifies ES256 tokens locally. |
 
 ### API and developer resources
 
