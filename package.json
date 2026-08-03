@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "description": "Public profile repository for the XPayr GitHub account and automated repository catalog refresh.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpayrcom/xpayrcom.git"
+  },
+  "homepage": "https://github.com/xpayrcom/xpayrcom",
   "scripts": {
     "test": "node --test",
     "update-profile": "node scripts/update-profile.mjs"
@@ -11,4 +18,3 @@
     "node": ">=20"
   }
 }
-
