@@ -1,7 +1,11 @@
 # XPayr
 
-XPayr is non-custodial crypto payment infrastructure for merchants, platforms, and agent-driven commerce. Build hosted checkout, payment links, embedded widgets, API integrations, webhooks, settlement routing, and verifiable payment evidence without giving XPayr custody of merchant funds.
+XPayr is non-custodial crypto payment infrastructure for merchants, platforms, and agent-driven commerce. Build hosted checkout (Dual Checkout: Web3 1-Click Pay & Direct Exchange Transfer / QR), multi-chain payment links, embedded widgets, API integrations, webhooks, settlement routing, and verifiable payment evidence without giving XPayr custody of merchant funds.
 
+[![MCP Server](https://img.shields.io/npm/v/%40xpayr%2Fmcp-server?label=%40xpayr%2Fmcp-server&color=029bfd)](https://www.npmjs.com/package/@xpayr/mcp-server)
+[![xpayr-mcp](https://img.shields.io/npm/v/xpayr-mcp?label=xpayr-mcp&color=10b981)](https://www.npmjs.com/package/xpayr-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.xpayrcom%2Fxpayr--mcp--server-8b5cf6)](https://registry.modelcontextprotocol.io/v0/servers?search=xpayr)
+[![GHCR Docker](https://img.shields.io/badge/GHCR-ghcr.io%2Fxpayrcom%2Fxpayr--mcp--server-2496ed)](https://github.com/xpayrcom/xpayr-mcp-server/pkgs/container/xpayr-mcp-server)
 [![Node SDK](https://img.shields.io/npm/v/%40xpayr%2Fnode-sdk?label=Node%20SDK)](https://www.npmjs.com/package/@xpayr/node-sdk)
 [![Payment Evidence](https://img.shields.io/npm/v/%40xpayr%2Fpayment-evidence?label=Payment%20Evidence)](https://www.npmjs.com/package/@xpayr/payment-evidence)
 [![PHP SDK](https://img.shields.io/packagist/v/xpayr/xpayr-php?label=PHP%20SDK)](https://packagist.org/packages/xpayr/xpayr-php)
@@ -9,17 +13,25 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 
 ## Build with XPayr
 
+- **Official 21-Tool MCP Server**: Run `npx -y @xpayr/mcp-server` inside Claude Desktop, Cursor, VS Code Copilot, Windsurf, or Cline to create multi-chain payment sessions, manage webhooks, and orchestrate AI agent payment intents.
 - Create testnet payment sessions with server-side API keys.
 - Send customers to hosted checkout or embed the checkout widget.
 - Verify webhook signatures before updating orders or balances.
 - Reconcile payment intent, on-chain receipt, platform fee, and merchant settlement.
-- Use Arc Testnet references for agent-wallet payments, evidence anchoring, and reconciliation experiments.
+- Use Arc Mainnet & Testnet references for agent-wallet payments, evidence anchoring, and reconciliation experiments.
 
-[Developer Hub](https://xpayr.com/developers) | [API Documentation](https://xpayr.com/doc-api) | [Testnet Registration](https://xpayr.com/merchant/register.php) | [Security Contact](https://xpayr.com/contact)
+[Developer Hub](https://xpayr.com/developers) | [AI & MCP Portal](https://xpayrcom.github.io/xpayr-portal/) | [API Documentation](https://xpayr.com/doc-api) | [Testnet Registration](https://xpayr.com/merchant/register) | [Security Contact](https://xpayr.com/contact)
 
 ## Official repositories
 
 <!-- repository-catalog:start -->
+### AI Agent & Model Context Protocol (MCP) Ecosystem
+
+| Repository | Purpose |
+| --- | --- |
+| [xpayr-mcp-server](https://github.com/xpayrcom/xpayr-mcp-server) | Official 21-tool Model Context Protocol (MCP) server (`@xpayr/mcp-server` & `xpayr-mcp`), OpenAPI 3.1.0 spec, n8n workflows, Docker GHCR container, and AI agent payment starter kit. |
+| [xpayr-portal](https://github.com/xpayrcom/xpayr-portal) | Official XPayr Developer & AI Agent Portal hosted on GitHub Pages (`https://xpayrcom.github.io/xpayr-portal/`) with 1-click Cursor/VS Code MCP install links, `llms.txt`, and OpenAPI 3.1.0 schemas. |
+
 ### SDKs and packages
 
 | Repository | Purpose |
@@ -39,13 +51,13 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 | [xpayr-postman-collection](https://github.com/xpayrcom/xpayr-postman-collection) | Official Postman collection and environments for exploring the XPayr Merchant API and testnet payment lifecycle. |
 | [xpayr-webhook-examples](https://github.com/xpayrcom/xpayr-webhook-examples) | Secure webhook verification examples for XPayr, including raw-body HMAC validation, idempotency, retries, and durable processing patterns. |
 
-### Arc Testnet and agent commerce
+### Arc Mainnet/Testnet and agent commerce
 
 | Repository | Purpose |
 | --- | --- |
-| [xpayr-agent-payments-arc-testnet](https://github.com/xpayrcom/xpayr-agent-payments-arc-testnet) | Reference flow for policy-controlled agent decisions, agent-wallet execution, Arc Testnet USDC settlement, and XPAYR reconciliation. |
-| [xpayr-reconciliation-arc-testnet](https://github.com/xpayrcom/xpayr-reconciliation-arc-testnet) | Read-only Arc Testnet reconciliation reference for XPAYR payment events, cursor checkpoints, deduplication, and RPC health monitoring. |
-| [xpayr-arc-testnet-examples](https://github.com/xpayrcom/xpayr-arc-testnet-examples) | XPAYR integration examples for Arc Testnet USDC checkout, transaction memos, App Kit workflows, and payment reconciliation. |
+| [xpayr-agent-payments-arc-testnet](https://github.com/xpayrcom/xpayr-agent-payments-arc-testnet) | Reference flow for policy-controlled agent decisions, agent-wallet execution, Arc USDC settlement, and XPAYR reconciliation. |
+| [xpayr-reconciliation-arc-testnet](https://github.com/xpayrcom/xpayr-reconciliation-arc-testnet) | Read-only Arc reconciliation reference for XPAYR payment events, cursor checkpoints, deduplication, and RPC health monitoring. |
+| [xpayr-arc-testnet-examples](https://github.com/xpayrcom/xpayr-arc-testnet-examples) | XPAYR integration examples for Arc USDC checkout, transaction memos, App Kit workflows, and payment reconciliation. |
 
 ### Checkout examples
 
@@ -75,8 +87,12 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 
 ## Release channels
 
+- npm (Official MCP Server): [`@xpayr/mcp-server`](https://www.npmjs.com/package/@xpayr/mcp-server) & [`xpayr-mcp`](https://www.npmjs.com/package/xpayr-mcp)
+- Official MCP Registry: [`io.github.xpayrcom/xpayr-mcp-server`](https://registry.modelcontextprotocol.io/v0/servers?search=xpayr)
+- GHCR Docker Container: `ghcr.io/xpayrcom/xpayr-mcp-server:latest`
 - npm: [`@xpayr/node-sdk`](https://www.npmjs.com/package/@xpayr/node-sdk)
 - npm: [`@xpayr/payment-evidence`](https://www.npmjs.com/package/@xpayr/payment-evidence)
+- npm: [`@xpayr/extension-kit`](https://www.npmjs.com/package/@xpayr/extension-kit)
 - Packagist: [`xpayr/xpayr-php`](https://packagist.org/packages/xpayr/xpayr-php)
 
 ## Security
