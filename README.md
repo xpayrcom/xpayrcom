@@ -20,7 +20,7 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 - Reconcile payment intent, on-chain receipt, platform fee, and merchant settlement.
 - Use Arc Mainnet & Testnet references for agent-wallet payments, evidence anchoring, and reconciliation experiments.
 
-[Developer Hub](https://xpayr.com/developers) | [AI & MCP Portal](https://xpayrcom.github.io/xpayr-portal/) | [API Documentation](https://xpayr.com/doc-api) | [Testnet Registration](https://xpayr.com/merchant/register) | [Security Contact](https://xpayr.com/contact)
+[Developer Hub](https://xpayr.com/developers) | [AI & MCP Portal](https://xpayrcom.github.io/) | [API Documentation](https://xpayr.com/doc-api) | [Testnet Registration](https://xpayr.com/merchant/register) | [Security Contact](https://xpayr.com/contact)
 
 ## Official repositories
 
@@ -30,6 +30,7 @@ XPayr is non-custodial crypto payment infrastructure for merchants, platforms, a
 | Repository | Purpose |
 | --- | --- |
 | [xpayr-mcp-server](https://github.com/xpayrcom/xpayr-mcp-server) | Official 21-tool Model Context Protocol (MCP) server (`@xpayr/mcp-server` & `xpayr-mcp`), OpenAPI 3.1.0 spec, n8n workflows, Docker GHCR container, and AI agent payment starter kit. |
+| [xpayrcom.github.io](https://github.com/xpayrcom/xpayrcom.github.io) | Official XPayr Developer & AI Agent Root Portal hosted at `https://xpayrcom.github.io/` with 1-click Cursor/VS Code MCP install links, `llms.txt`, and OpenAPI 3.1.0 schemas. |
 | [xpayr-portal](https://github.com/xpayrcom/xpayr-portal) | Official XPayr Developer & AI Agent Portal hosted on GitHub Pages (`https://xpayrcom.github.io/xpayr-portal/`) with 1-click Cursor/VS Code MCP install links, `llms.txt`, and OpenAPI 3.1.0 schemas. |
 
 ### SDKs and packages
