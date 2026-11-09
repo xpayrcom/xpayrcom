@@ -6,6 +6,14 @@ const END_MARKER = "<!-- repository-catalog:end -->";
 
 const GROUPS = [
   {
+    title: "AI Agent & Model Context Protocol (MCP) Ecosystem",
+    repositories: [
+      "xpayr-mcp-server",
+      "xpayrcom.github.io",
+      "xpayr-portal",
+    ],
+  },
+  {
     title: "SDKs and packages",
     repositories: [
       "xpayr-node-sdk",
