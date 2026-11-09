@@ -1,7 +1,19 @@
+<p align="center">
+  <a href="https://xpayr.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://xpayr.com/public/assets/images/xpayr-logo-white.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://xpayr.com/public/assets/images/xpayr-logo-black.png" />
+      <img alt="XPayr Official Logo" src="https://xpayr.com/public/assets/images/xpayr-logo-white.png" height="54" />
+    </picture>
+  </a>
+</p>
+
 # XPayr
 
 XPayr is non-custodial crypto payment infrastructure for merchants, platforms, and agent-driven commerce. Build hosted checkout (Dual Checkout: Web3 1-Click Pay & Direct Exchange Transfer / QR), multi-chain payment links, embedded widgets, API integrations, webhooks, settlement routing, and verifiable payment evidence without giving XPayr custody of merchant funds.
 
+[![Powered by XPayr](https://xpayr.com/partner-badge.php?type=powered_by&theme=dark)](https://xpayr.com)
+[![Live MCP Portal](https://img.shields.io/badge/MCP_Portal-mcp.xpayr.com-029bfd)](https://mcp.xpayr.com/)
 [![MCP Server](https://img.shields.io/npm/v/%40xpayr%2Fmcp-server?label=%40xpayr%2Fmcp-server&color=029bfd)](https://www.npmjs.com/package/@xpayr/mcp-server)
 [![xpayr-mcp](https://img.shields.io/npm/v/xpayr-mcp?label=xpayr-mcp&color=10b981)](https://www.npmjs.com/package/xpayr-mcp)
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.xpayrcom%2Fxpayr--mcp--server-8b5cf6)](https://registry.modelcontextprotocol.io/v0/servers?search=xpayr)
